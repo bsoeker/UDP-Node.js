@@ -7,7 +7,9 @@ const socket = dgram.createSocket("udp4");
 
 socket.on("listening", () => {
   const address = socket.address();
-  console.log(`Server started listening on ${address.address}:${address.port}`);
+  console.log(
+    `Server is ready for communication on ${address.address}:${address.port}`
+  );
 });
 
 socket.on("message", (msg, info) => {
